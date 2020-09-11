@@ -27,7 +27,7 @@ def radixSort( vector ):
     del woutput
     wdivider *= 10
 
-  return woutput
+  return winput
     
 
 # main program begins here
