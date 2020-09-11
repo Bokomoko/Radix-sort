@@ -1,6 +1,6 @@
 def radixSort( vector ):
-  winput = list(vector)
-  # calculate de number of passes = number of digits of max
+  winput = list(vector) #create copy of input vector
+  # calc number of passes = number of digits of max
   passes = math.ceil(math.log10(max(vector)))
   woutput =[]
   wdivider = 1 
@@ -23,7 +23,8 @@ def radixSort( vector ):
       woutput[numbers[digit]-1] = elem 
       numbers[digit] -= 1  # one less elem with that digit
     
-    winput = list(woutput)  # outuput 
+    winput = woutput
+    del woutput
     wdivider *= 10
 
   return woutput
@@ -36,5 +37,5 @@ import math
 # read unsorted data from file
 myList = list(map(int,open("unsorted.dat", "r").read().split(",")))
 
-coisa = radixSor(myList)
+coisa = radixSort(myList)
 print(coisa)
